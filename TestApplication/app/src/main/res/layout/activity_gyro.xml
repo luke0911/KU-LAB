@@ -1,0 +1,52 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/yawRealtimeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yaw: 0°"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/yawLogView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yaw 로그 출력"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/labelMeasureInterval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="측정 간격: 500ms"
+            android:layout_marginTop="20dp" />
+
+        <SeekBar
+            android:id="@+id/seekMeasureInterval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="2000" />
+
+        <TextView
+            android:id="@+id/labelRecordInterval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기록 간격: 10.0s"
+            android:layout_marginTop="20dp" />
+
+        <SeekBar
+            android:id="@+id/seekRecordInterval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="30000" />
+    </LinearLayout>
+</ScrollView>

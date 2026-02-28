@@ -1,0 +1,51 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource: ## MySQL 설정
+    url: jdbc:mysql://${MYSQL_HOST}:3306/neb_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  data:
+    redis: ## Redis 설정
+      host: ${REDIS_HOST}
+      port: 6379
+      username: default
+      password: ${REDIS_PASSWORD}
+    opensearch:
+      url: ${OPENSEARCH_HOST}:9200
+      username: admin
+      password: ${OPENSEARCH_PASSWORD}
+  firebase:
+    config-path: ${FIREBASE_CONFIG_PATH}
+
+
+# Logging
+logging:
+  level:
+    io:
+      lettuce:
+        core:
+          protocol:
+            CommandHandler: ${LOG_LEVEL:INFO}
+    org:
+      springframework:
+        data:
+          redis: ${LOG_LEVEL:INFO}
+      opensearch:
+        client:
+          RestClient: ${LOG_LEVEL:INFO}
+
+server:
+  host: ${SERVER_HOST}
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+
+internal:
+  api:
+    key: ${INTERNAL_API_KEY}
+
+admin:
+  password: ${SUPERADMIN_PASSWORD}

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imgLogoTop"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="앱 로고"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_main_logo" />
+
+    <TextView
+        android:id="@+id/txtAppNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="안전지킴이"
+        android:textColor="#0000FF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLogoTop"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoTop"
+        app:layout_constraintTop_toTopOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtUserNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="남길동"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUserIconTop"
+        app:layout_constraintEnd_toStartOf="@+id/imgUserIconTop"
+        app:layout_constraintTop_toTopOf="@+id/imgUserIconTop" />
+
+    <ImageView
+        android:id="@+id/imgUserIconTop"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_user_icon_background"
+        android:contentDescription="사용자 프로필 아이콘"
+        android:padding="6dp"
+        android:src="@drawable/ic_user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#6C757D" />
+
+    <TextView
+        android:id="@+id/txtProjectCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="대우건설"
+        android:textColor="#0000FF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtProjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="인덕원퍼스비엘"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtProjectCompany"
+        app:layout_constraintStart_toEndOf="@+id/txtProjectCompany" />
+
+    <LinearLayout
+        android:id="@+id/layoutAlertButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProjectName">
+
+        <Button
+            android:id="@+id/btnAlertEvent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_alert_white"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="사건 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnAlertAccident"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_alert_white"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="사고 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnAlertRescue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_alert_white"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="구조 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnAlertReport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_alert_white"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="보고 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/statusContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAlertButtons">
+
+        <!-- visibility 속성 visible or gone으로 설정하여 활성화/비활성화 가능 -->
+        <TextView
+            android:id="@+id/txtStatusSafe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0F2F1"
+            android:padding="12dp"
+            android:text="● 안전   |   오늘 신고 접수 없음"
+            android:textColor="#00695C"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txtStatusCaution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF8E1"
+            android:padding="12dp"
+            android:text="● 주의   |   오늘 신고 접수 (3)"
+            android:textColor="#F57F17"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtStatusDanger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFEBEE"
+            android:padding="12dp"
+            android:text="● 위험   |   오늘 신고 접수 (7)"
+            android:textColor="#D32F2F"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutActionButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusContainer">
+
+        <Button
+            android:id="@+id/btnSubmitReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_alert_white"
+            android:text="보고하기"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnReportIncident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_alert_white"
+            android:text="신고하기"
+            android:textAllCaps="false"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnSubmitRescue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_alert_red"
+            android:text="구조요청"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menuDateFilterLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionButtons"
+        app:endIconMode="dropdown_menu"> <AutoCompleteTextView
+        android:id="@+id/btnDateFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="none"
+        android:text="1달 기준 ▾"
+        android:textColor="#000000"
+        android:background="@drawable/dropdown_background"
+        android:paddingStart="12dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollViewAlertList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuDateFilterLayout">
+
+        <LinearLayout
+            android:id="@+id/layoutAlertList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_background"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2020.00.00 - 00:00"
+                    android:textColor="#888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화재"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_background"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2020.00.00 - 00:00"
+                    android:textColor="#888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="폭발"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_background"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2020.00.00 - 00:00"
+                    android:textColor="#888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="붕괴"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavHome"
+            style="@style/Widget.App.Button.BottomNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.9"
+            android:checkable="true"
+            android:checked="false"
+            android:background="@drawable/button_nav_background_selector"
+            android:text="홈" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavMap"
+            style="@style/Widget.App.Button.BottomNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.9"
+            android:checkable="true"
+            android:checked="false"
+            android:background="@drawable/button_nav_background_selector"
+            android:text="지도" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavAlert"
+            style="@style/Widget.App.Button.BottomNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1.0"
+            android:checkable="true"
+            android:checked="true"
+            android:background="@drawable/button_nav_background_selector"
+            android:text="사건/사고" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavStats"
+            style="@style/Widget.App.Button.BottomNav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0.9"
+            android:checkable="true"
+            android:checked="false"
+            android:background="@drawable/button_nav_background_selector"
+            android:text="통계" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

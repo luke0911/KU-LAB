@@ -1,0 +1,86 @@
+#map_area {
+    position: absolute;
+    z-index: 1;
+}
+
+#dotContainer {
+    position: relative;
+    z-index: 2;
+    display: block;
+    pointer-events: none;
+    transition: left 0.5s ease, top 0.5s ease;
+}
+
+#small_arrow, #small_dot, #X, #big_arrow, #big_dot {
+    position: absolute;
+}
+
+#small_arrow, #big_arrow {
+    z-index: 1;
+    display:none;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+    transform-origin : center;
+}
+
+#small_dot, #big_dot {
+    z-index: 2;
+    display:none;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+}
+
+#X {
+    z-index: 3;
+    display:none;
+    pointer-events: none;
+    transform: rotate(180deg);
+}
+
+#box {
+    position: absolute;
+    z-index: 2;
+    display: none;
+    background-color: rgba(135, 206, 235, 0.3)
+}
+
+#svgContainer {
+    position: absolute;
+    z-index: 2;
+    display: block;
+}
+
+#setting #floorSelection {
+    position: absolute;
+    z-index: 6;
+    display:block;
+}
+
+.button-active {
+    background-color: #4CAF50; /* 활성화된 버튼의 배경색 */
+    color: white; /* 활성화된 버튼의 글자색 */
+}
+
+#sliderContainer {
+    position: absolute;
+    z-index: 4;
+    display:block;
+    top: 60px;
+}
+
+#tooltip {
+    display:block;
+    position: absolute;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #d4d4d4;
+    z-index: 5;
+}
+
+.marker {
+    transition: fill 0.3s ease, r 0.3s ease;
+}
+.marker:hover {
+    fill: red;
+    r: 12;
+}

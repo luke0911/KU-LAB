@@ -1,0 +1,23 @@
+# Gradle build cache and output
+.gradle/
+build/
+**/build/
+
+# IntelliJ IDEA project files
+.idea/
+
+# Local OS files
+*.log
+*.DS_Store
+
+# Git-related
+.git
+.gitignore
+.gitattributes
+
+# Dockerignore itself is not needed in the image
+.dockerignore
+
+# Markdown/Docs
+README.md
+HELP.md

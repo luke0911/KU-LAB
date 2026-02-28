@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DB</title>
+  </head>
+  <body>
+    <h1>센서값</h1>
+    <div id="data"></div>
+
+    <script>
+      const userId = "019897ce-1140-7603-8852-7e460b54bc2b";
+      const evtSource = new EventSource(`/api/visualization-stream?userId=${userId}`);
+
+      evtSource.onmessage = function (event) {
+        const data = JSON.parse(event.data);
+        let html = "<ul>";
+        data.labels.forEach((label, i) => {
+          html += `<li>${label} : ${data.values[i]}</li>`;
+        });
+        html += "</ul>";
+        document.getElementById("data").innerHTML = html;
+      };
+
+      evtSource.onerror = function (err) {
+        console.error("SSE 연결 오류", err);
+      };
+    </script>
+  </body>
+</html>

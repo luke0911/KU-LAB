@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage">
+
+    <ImageView
+        android:id="@+id/imgLogoTop"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="앱 로고"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_main_logo" />
+
+    <TextView
+        android:id="@+id/txtAppNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="안전지킴이"
+        android:textColor="#0000FF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLogoTop"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoTop"
+        app:layout_constraintTop_toTopOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtUserNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="남길동"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUserIconTop"
+        app:layout_constraintEnd_toStartOf="@+id/imgUserIconTop"
+        app:layout_constraintTop_toTopOf="@+id/imgUserIconTop" />
+
+    <ImageView
+        android:id="@+id/imgUserIconTop"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_user_icon_background"
+        android:contentDescription="사용자 프로필 아이콘"
+        android:padding="6dp"
+        android:src="@drawable/ic_user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#6C757D" />
+
+    <TextView
+        android:id="@+id/txtProjectCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="대우건설"
+        android:textColor="#0000FF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtProjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="인덕원퍼스비엘"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtProjectCompany"
+        app:layout_constraintStart_toEndOf="@+id/txtProjectCompany" />
+
+    <LinearLayout
+        android:id="@+id/layoutStats"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProjectCompany">
+
+        <TextView
+            android:id="@+id/txtTotalCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총인원 • 000"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtCheckedInCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="출근 • 000"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtCheckedOutCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="퇴근 • 000"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/statusBarLayout"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutStats">
+
+        <View
+            android:id="@+id/statusBarWorking"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="60"
+            android:background="#28A745" />
+
+        <View
+            android:id="@+id/statusBarAway"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:background="#FFC107" />
+
+        <View
+            android:id="@+id/statusBarOffline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:background="#6C757D" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutStatusLabels"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBarLayout">
+
+        <TextView
+            android:id="@+id/txtWorkingCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="■ 근무 000"
+            android:textColor="#28A745"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtAwayCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="■ 외출 000"
+            android:textColor="#FFC107"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtOfflineCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="■ 오프라인 000"
+            android:textColor="#6C757D"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#40000000"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="사건 / 사고 알림 없음"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutStatusLabels" />
+
+
+    <FrameLayout
+        android:id="@+id/contentArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAlert"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/work_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="출 근"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/outing_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="외 출"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/off_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="퇴 근"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- 홈 버튼: checked="true" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.8"
+            android:checkable="true"
+            android:checked="true"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="홈"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp"
+            app:backgroundTint="@color/button_nav_background_tint_selector" />
+
+        <!-- 지도 버튼: checked="false" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="지도"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+
+        <!-- 사건/사고 버튼: checked="false" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="사건/사고"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+
+        <!-- 통계 버튼: checked="false" -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="통계"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--로그인 버튼의 상태(활성/비활성)에 따른 텍스트 색상 정의-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true" android:color="#FFFFFF"/>
+
+    <item android:state_enabled="false" android:color="#66000000"/>
+
+    <item android:color="#66000000"/>
+</selector>

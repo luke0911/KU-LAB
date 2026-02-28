@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:text="나침반 모드"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"/>
+
+    <Button
+        android:id="@+id/mapUpdateButton"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="#B6DAF3"
+        android:textColor="@color/black"
+        android:text="Map Update" />
+
+    <!-- 추후 저장 버튼 등 필요시 추가 가능 -->
+
+</LinearLayout>

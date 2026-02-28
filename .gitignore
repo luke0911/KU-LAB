@@ -1,0 +1,47 @@
+# Android
+*.iml
+.gradle/
+/local.properties
+.idea/
+*.apk
+*.aab
+*.ap_
+*.dex
+**/build/
+/captures
+
+# Unity
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+*.csproj
+*.unityproj
+*.sln
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# C++ build
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+
+# Node.js
+node_modules/
+
+# Archives
+*.zip
+
+# macOS
+.DS_Store
+
+# IDE
+*.swp

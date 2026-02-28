@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F9FAFB">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_main_logo"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안전지킴이"
+        android:textColor="#808080"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editTextAccountId"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="전화번호를 입력해주세요."
+        android:textColor="@color/edittext_selector_text_color"
+        android:textColorHint="#CCCCCC"
+        android:background="@drawable/edittext_selector_background"
+        android:textSize="18sp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="전화번호 뒷자리를 입력해주세요."
+        android:inputType="textPassword"
+        android:textColor="@color/edittext_selector_text_color"
+        android:textColorHint="#CCCCCC"
+        android:background="@drawable/edittext_selector_background"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"/>
+
+    <!-- 로그인 오류 메세지 -->
+    <TextView
+        android:id="@+id/textViewLoginError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FF0000"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:paddingStart="4dp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_login_background"
+        android:text="로그인"
+        android:textColor="@color/login_button_text_color"
+        android:textFontWeight="600"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonGoRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:background="@drawable/button_login_background"
+        android:textColor="#FFFFFF"
+        android:textFontWeight="600"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정 찾기"
+        android:textColor="#808080"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

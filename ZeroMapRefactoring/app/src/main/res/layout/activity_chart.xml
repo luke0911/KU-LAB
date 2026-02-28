@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage">
+
+    <ImageView
+        android:id="@+id/imgLogoTop"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="앱 로고"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_main_logo" />
+
+    <TextView
+        android:id="@+id/txtAppNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="안전지킴이"
+        android:textColor="#0000FF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLogoTop"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoTop"
+        app:layout_constraintTop_toTopOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtUserNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="남길동"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUserIconTop"
+        app:layout_constraintEnd_toStartOf="@+id/imgUserIconTop"
+        app:layout_constraintTop_toTopOf="@+id/imgUserIconTop" />
+
+    <ImageView
+        android:id="@+id/imgUserIconTop"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_user_icon_background"
+        android:contentDescription="사용자 프로필 아이콘"
+        android:padding="6dp"
+        android:src="@drawable/ic_user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#6C757D" />
+
+    <TextView
+        android:id="@+id/txtProjectCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="대우건설"
+        android:textColor="#0000FF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtProjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="인덕원퍼스비엘"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtProjectCompany"
+        app:layout_constraintStart_toEndOf="@+id/txtProjectCompany" />
+
+    <View
+        android:id="@+id/viewTranslucentBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shape_chart_background"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProjectName" />
+
+    <LinearLayout
+        android:id="@+id/layoutTabs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/viewTranslucentBackground"
+        app:layout_constraintStart_toStartOf="@+id/viewTranslucentBackground"
+        app:layout_constraintTop_toBottomOf="@+id/txtProjectName">
+
+        <LinearLayout
+            android:id="@+id/tabOverall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvTabOverall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="전체 통계"
+                android:textColor="#000000" android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/viewTabOverallLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" /> </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabMyStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvTabMyStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="내 통계"
+                android:textColor="#000000" android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <View
+                android:id="@+id/viewTabMyStatsLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewOverallStats"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="@+id/viewTranslucentBackground"
+        app:layout_constraintStart_toStartOf="@+id/viewTranslucentBackground"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTabs">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="근무 현황"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_data_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="총인원 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_work" />
+
+                <TextView
+                    android:id="@+id/tv_data_attendance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="출근 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_green_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_data_total" />
+
+                <TextView
+                    android:id="@+id/tv_data_leave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="퇴근 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_black_8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_data_attendance"
+                    app:layout_constraintTop_toTopOf="@id/tv_data_attendance" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_work_status"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_safety"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안전점검회의 참가율"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/layout_data_meeting_join"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="참가 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_blue_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_safety" />
+
+                <TextView
+                    android:id="@+id/layout_data_meeting_absent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="불참 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_red_8dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_data_meeting_join"
+                    app:layout_constraintTop_toTopOf="@id/layout_data_meeting_join" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_safety_meeting"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="작업자 이동 상태"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/layout_data_action_move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="이동 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_green_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_action" />
+
+                <TextView
+                    android:id="@+id/layout_data_action_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="정지 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_yellow_8dp"
+                    app:layout_constraintStart_toEndOf="@id/layout_data_action_move"
+                    app:layout_constraintTop_toTopOf="@id/layout_data_action_move" />
+
+                <TextView
+                    android:id="@+id/layout_data_action_separate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="분리 • 000"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_red_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_data_action_move" />
+
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_worker_action"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollViewMyStats"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="@+id/viewTranslucentBackground"
+        app:layout_constraintStart_toStartOf="@+id/viewTranslucentBackground"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTabs">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_my_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내 이동 상태"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="이동 • 00:00"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_green_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_my_action" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_stop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="정지 • 00:00"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_yellow_8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_data_my_move"
+                    app:layout_constraintTop_toTopOf="@id/tv_data_my_move" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_separate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="분리 • 00:00"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_red_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_data_my_move" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_my_move_status"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_my_work_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내 근무 시간"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="근무 • 00:00"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_green_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_my_work_time" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="외출 • 00:00"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_purple_8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_data_my_work"
+                    app:layout_constraintTop_toTopOf="@id/tv_data_my_work" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_remain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="남은시간 • 00:00"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_black_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_data_my_work" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_my_work_time"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_my_work_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="내 근무 현황"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle_my_work_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1주일 기준"
+                    android:textColor="#000000" android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_my_work_status" />
+
+
+                <TextView
+                    android:id="@+id/tv_data_my_onduty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="출근 • 0일"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_green_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subtitle_my_work_status" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_offduty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="퇴근 • 0일"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_black_8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_data_my_onduty"
+                    app:layout_constraintTop_toTopOf="@id/tv_data_my_onduty" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_my_work_status"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_title_my_safety"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안전점검회의 참가율"
+                    android:textColor="#000000" android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle_my_safety"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1주일 기준"
+                    android:textColor="#000000" android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_my_safety" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_join"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="참가 • 0일"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_blue_8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subtitle_my_safety" />
+
+                <TextView
+                    android:id="@+id/tv_data_my_absent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="불참 • 0일"
+                    android:textColor="#000000" android:textSize="16sp"
+                    android:paddingStart="4dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_dot_red_8dp"
+                    app:layout_constraintStart_toEndOf="@id/tv_data_my_join"
+                    app:layout_constraintTop_toTopOf="@id/tv_data_my_join" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart_my_safety_meeting"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.8"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:checkable="true"
+            android:checked="false"
+            android:text="홈"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="지도"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="사건/사고"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/button_nav_background_tint_selector"
+            android:checkable="true"
+            android:checked="true"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="통계"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

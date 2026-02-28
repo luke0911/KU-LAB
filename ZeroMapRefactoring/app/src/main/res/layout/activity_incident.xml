@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainpage"
+    tools:context=".RegisterActivity">
+
+    <!-- ... (imgLogoTop 부터 statusContainer 까지의 코드는 변경 없음) ... -->
+    <ImageView
+        android:id="@+id/imgLogoTop"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="앱 로고"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_main_logo" />
+
+    <TextView
+        android:id="@+id/txtAppNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="안전지킴이"
+        android:textColor="#0000FF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgLogoTop"
+        app:layout_constraintStart_toEndOf="@+id/imgLogoTop"
+        app:layout_constraintTop_toTopOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtUserNameTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="남길동"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUserIconTop"
+        app:layout_constraintEnd_toStartOf="@+id/imgUserIconTop"
+        app:layout_constraintTop_toTopOf="@+id/imgUserIconTop" />
+
+    <ImageView
+        android:id="@+id/imgUserIconTop"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_user_icon_background"
+        android:contentDescription="사용자 프로필 아이콘"
+        android:padding="6dp"
+        android:src="@drawable/ic_user_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#6C757D" />
+
+    <TextView
+        android:id="@+id/txtProjectCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="대우건설"
+        android:textColor="#0000FF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogoTop" />
+
+    <TextView
+        android:id="@+id/txtProjectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="인덕원퍼스비엘"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtProjectCompany"
+        app:layout_constraintStart_toEndOf="@+id/txtProjectCompany" />
+
+    <LinearLayout
+        android:id="@+id/layoutAlertButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtProjectName">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAlertEvent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="사건 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="8dp"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAlertAccident"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="사고 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="8dp"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAlertRescue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="구조 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="8dp"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAlertReport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:minHeight="0dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="보고 • 000"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:cornerRadius="8dp"
+            app:strokeColor="#DDDDDD"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/statusContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutAlertButtons">
+
+        <TextView
+            android:id="@+id/txtStatusSafe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E0F2F1"
+            android:padding="12dp"
+            android:text="● 안전   |   오늘 신고 접수 없음"
+            android:textColor="#00695C"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/txtStatusCaution"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF8E1"
+            android:padding="12dp"
+            android:text="● 주의   |   오늘 신고 접수 (3)"
+            android:textColor="#F57F17"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtStatusDanger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFEBEE"
+            android:padding="12dp"
+            android:text="● 위험   |   오늘 신고 접수 (7)"
+            android:textColor="#D32F2F"
+            android:visibility="gone" />
+
+    </FrameLayout>
+    <!-- ... (여기까지 기존 코드) ... -->
+
+
+    <LinearLayout
+        android:id="@+id/layoutActionButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusContainer">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitReport"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="보고하기"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:strokeColor="#DDDDDD" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReportIncident"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="신고하기"
+            android:textColor="#000000"
+            app:backgroundTint="#FFFFFF"
+            app:strokeColor="#DDDDDD" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitRescue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="구조요청"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#FF4D6F" />
+    </LinearLayout>
+
+
+    <!-- ▼▼▼ [삭제] 보고 종류 드롭다운 (이제 안씀) ▼▼▼ -->
+    <!--
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menuReportTypeLayout" ... />
+    -->
+
+
+    <!-- ▼▼▼ [신규 추가] '보고하기' 폼 스크롤뷰 ▼▼▼ -->
+    <ScrollView
+        android:id="@+id/reportFormScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionButtons"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- '보고하기' 폼의 루트 레이아웃 -->
+            <LinearLayout
+                android:id="@+id/layoutReportForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- '보고 종류' 토글 헤더 -->
+                <LinearLayout
+                    android:id="@+id/layoutReportFormHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textToggleReportFormType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="▼ 보고 종류"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textSelectedReportFormType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/list_item_background"
+                        android:paddingStart="12dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="4dp"
+                        android:textColor="#000000"
+                        android:visibility="gone"
+                        tools:text="위험구역"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+                <!-- '보고 종류' 하위 메뉴 (위험/하자 버튼) -->
+                <LinearLayout
+                    android:id="@+id/layoutReportFormSubMenus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReportTypeDanger"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="위험구역"
+                        android:textColor="#000000"
+                        app:backgroundTint="#FFFFFF"
+                        app:strokeColor="#DDDDDD" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnReportTypeDefect"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="하자보수"
+                        android:textColor="#000000"
+                        app:backgroundTint="#FFFFFF"
+                        app:strokeColor="#DDDDDD" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- '보고하기' 폼의 '추가내용' 및 '사진첨부' (신고하기 폼에서 복사 및 ID 수정) -->
+            <LinearLayout
+                android:id="@+id/layoutReportFormDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:shadowColor="#FFFFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="4"
+                    android:text="추가내용"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutAdditionalInfo_Report"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxBackgroundColor="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputAdditionalInfo_Report"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:hint="보고에 관한 추가내용을 입력해주세요."
+                        android:inputType="textMultiLine"
+                        android:minLines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:shadowColor="#FFFFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="4"
+                    android:text="사진 첨부하기"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTakePhoto_Report"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="촬영하기"
+                        android:textColor="#000000"
+                        app:backgroundTint="#FFFFFF"
+                        app:strokeColor="#DDDDDD" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenAlbum_Report"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="사진첩"
+                        android:textColor="#000000"
+                        app:backgroundTint="#FFFFFF"
+                        app:strokeColor="#DDDDDD" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCompleteReport_Report"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="보고 완료하기"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:backgroundTint="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <!-- ▲▲▲ [신규 추가] 여기까지 ▲▲▲ -->
+
+
+    <!-- '신고하기' 폼 스크롤뷰 -->
+    <ScrollView
+        android:id="@+id/formScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionButtons"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <LinearLayout
+                android:id="@+id/layoutReportIncident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layoutReportHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textToggleReportType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="▼ 신고 종류"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textSelectedReportType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/list_item_background"
+                        android:paddingStart="12dp"
+                        android:paddingTop="4dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="4dp"
+                        android:textColor="#000000"
+                        android:visibility="gone"
+                        tools:text="화재"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutReportSubMenus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/layoutEventType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="18dp"
+                            android:shadowColor="#FFFFFFFF"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="4"
+                            android:text="사건 종류"
+                            android:textColor="#FF000000"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:boxBackgroundColor="#FFFFFF">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownEventType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:text="선택" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutOtherEventType"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone"
+                        app:boxBackgroundColor="#FFFFFF"
+                        tools:visibility="visible">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputOtherEventType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="사건 종류를 입력해주세요."
+                            android:inputType="text"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/layoutAccidentType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="18dp"
+                            android:shadowColor="#FFFFFFFF"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="4"
+                            android:text="사고 종류"
+                            android:textColor="#FF000000"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:boxBackgroundColor="#FFFFFF">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/dropdownAccidentType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:text="선택" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutOtherAccidentType"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        app:boxBackgroundColor="#FFFFFF"
+                        tools:visibility="visible">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputOtherAccidentType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="사고 종류를 입력해주세요."
+                            android:inputType="text"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutReportDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:shadowColor="#FFFFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="4"
+                    android:text="추가내용"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutAdditionalInfo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxBackgroundColor="#FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputAdditionalInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:hint="사건/사고에 관한 추가내용을 입력해주세요."
+                        android:inputType="textMultiLine"
+                        android:minLines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:shadowColor="#FFFFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="4"
+                    android:text="사진 첨부하기"
+                    android:textColor="#FF000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTakePhoto"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="촬영하기"
+                        android:textColor="#000000"
+                        app:backgroundTint="#FFFFFF"
+                        app:strokeColor="#DDDDDD" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenAlbum"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="사진첩"
+                        android:textColor="#000000"
+                        app:backgroundTint="#FFFFFF"
+                        app:strokeColor="#DDDDDD" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCompleteReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="신고 완료하기"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    app:backgroundTint="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- '구조요청' 폼 스크롤뷰 -->
+    <ScrollView
+        android:id="@+id/scrollViewRescueRequest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionButtons"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutRescueDetails"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="#FFFFFF">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputRescueDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="기타 신고 내용을 입력해주세요."
+                    android:inputType="textMultiLine"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="* 없다면 공란으로 완료해주세요."
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="* 30초 동안 아무 반응이 없다면 자동으로 완료됩니다."
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompleteRescue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="구조 요청 완료하기 (30)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:backgroundTint="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menuDateFilterLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:boxBackgroundColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutActionButtons">
+
+        <AutoCompleteTextView
+            android:id="@+id/btnDateFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:text="1달 기준"
+            android:textColor="#000000" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ScrollView
+        android:id="@+id/scrollViewAlertList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menuDateFilterLayout">
+
+        <LinearLayout
+            android:id="@+id/layoutAlertList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_background"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2020.00.00 - 00:00"
+                    android:textColor="#888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화재"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_background"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2020.00.00 - 00:00"
+                    android:textColor="#888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="폭발"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/list_item_background"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2020.00.00 - 00:00"
+                    android:textColor="#888888" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="붕괴"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="0.8"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="홈"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp"
+            app:backgroundTint="@color/button_nav_background_tint_selector" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="지도"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp"
+            app:backgroundTint="@color/button_nav_background_tint_selector" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavAlert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:checked="true"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="사건/사고"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp"
+            app:backgroundTint="@color/button_nav_background_tint_selector" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNavStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:checkable="true"
+            android:checked="false"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="통계"
+            android:textAllCaps="false"
+            android:textColor="@color/button_nav_text_color_selector"
+            android:textSize="14sp"
+            app:backgroundTint="@color/button_nav_background_tint_selector" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

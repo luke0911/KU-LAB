@@ -1,0 +1,50 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource: ## MySQL 설정
+    url: jdbc:mysql://localhost:3306/neb_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: cslab
+    password: embedded
+  data:
+    redis: ## Redis 설정
+      host: localhost
+      port: 6379
+      username: default
+      password: 1q@W3e4r5t
+    opensearch:
+      url: localhost:9200
+      username: admin
+      password: 1q@W3e4r5t
+  firebase:
+    config-path: src/main/resources/firebase/firebase-service-account.json
+
+# Logging
+logging:
+  level:
+    io:
+      lettuce:
+        core:
+          protocol:
+            CommandHandler: DEBUG
+    org:
+      springframework:
+        data:
+          redis: DEBUG
+      opensearch:
+        client:
+          RestClient: DEBUG
+
+server:
+  host: http://localhost
+
+jwt:
+  secret-key: AWLERhnxbuawaAWF2avaaWR2@j@amwnjktr!24k
+
+internal:
+  api:
+    key: vahTJI@34jawhjcna1620!mafwejLxm@aWx
+
+admin:
+  password: 1q@w3e4r5t

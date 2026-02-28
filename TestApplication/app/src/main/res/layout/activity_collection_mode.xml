@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <Button
+        android:id="@+id/button_pressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. 실시간 기압"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/button_compass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. 나침반 각도"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/button_gyro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. 자이로 각도 (이동하는 함정 테스트)"
+        android:textSize="18sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/button_pdr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. 보행 경로"
+        android:textSize="18sp" />
+</LinearLayout>

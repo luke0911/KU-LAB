@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EditText의 상태(포커스 여부)에 따른 텍스트 색상 정의-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_focused="true" android:color="#66000000"/> <item android:color="#CCCCCC"/> </selector>
