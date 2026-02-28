@@ -7,12 +7,12 @@
 본 프로젝트는 Korea University 정보보호학과 연구실에서 진행하는 **실내 위치 추적 및 네비게이션 시스템** 연구입니다. IMU(관성 측정 장치) 센서 기반의 PDR 알고리즘, 계단 감지 기술, 그리고 다중 플랫폼 클라이언트-서버 인프라를 통해 건물 내에서 높은 정확도의 위치 추적을 구현합니다.
 
 **핵심 개발 영역:**
-- PDR 알고리즘 개선 및 검증
-- IMU 센서 기반 바닥층 자동 감지
 - Android 기반 실내 네비게이션 앱
 - Unity 3D 시뮬레이션 환경
 - Express.js 및 Spring Boot 백엔드 서버
 - OpenSearch 기반 데이터 인덱싱
+
+> **참고:** PDR 시뮬레이션 및 IMU 층 감지 시뮬레이션 프로젝트는 [Indoor-Navigation-Sim](https://github.com/luke0911/Indoor-Navigation-Sim) 저장소로 이전되었습니다.
 
 ---
 
@@ -46,18 +46,6 @@
 
 ```
 KU-LAB/
-├── PDR_simulation/                      # PDR 알고리즘 시뮬레이터 (C++)
-│   ├── main.cpp / viz.cpp               # 시뮬레이션 엔진 및 OpenCV 시각화
-│   ├── src/                             # 개선된 PDR 알고리즘 (신규 버전)
-│   ├── src_old/                         # 원본 Android PDR 알고리즘 (기존 버전)
-│   ├── include/                         # 알고리즘 헤더 파일
-│   └── data/                            # 센서 데이터 및 지도 파일
-│
-├── IMU_Floor_deteciton_simulation/      # 바닥층 감지 시뮬레이터 (C++)
-│   ├── imu_floor_detection.h/cpp        # 계단/평지 감지 알고리즘
-│   ├── main.cpp / viz.cpp               # 시뮬레이션 및 3개 윈도우 시각화
-│   └── data/Floor_sim_data/             # 다양한 보행 패턴 센서 데이터
-│
 ├── KoreaUniv/                           # 고려대 캠퍼스 Android 네비게이션 앱
 │   ├── app/                             # Android 메인 앱 (Kotlin)
 │   ├── maplocationlib/                  # 위치 추적 라이브러리
@@ -110,28 +98,7 @@ KU-LAB/
 
 ### 주요 하위 프로젝트별 설명
 
-#### 1. **PDR_simulation/** (C++ 시뮬레이터)
-- **목적:** 개선된 PDR 알고리즘을 PC 환경에서 검증
-- **기능:**
-  - 듀얼 파이프라인: 신규 알고리즘 vs 기존 Android 원본 알고리즘 동시 실행
-  - Step Detection, Step Length 추정
-  - 3개 시각화 윈도우 (PDR Dashboard, WorldMap, Analysis)
-  - 키보드 상호작용으로 경로 조정 및 분석
-- **입출력:** 센서 데이터(TSV) → PDR 경로 시각화 + 분석 결과
-
-#### 2. **IMU_Floor_deteciton_simulation/** (C++ 시뮬레이터)
-- **목적:** 계단 감지 알고리즘 성능 검증
-- **기능:**
-  - Weighted Scoring FSM 기반 계단/평지 판정
-  - 일반/살살/거친 보행 패턴 분류
-  - 3개 분석 윈도우: 신호 파형, 산점도, 피처 점수
-  - 배치 모드로 일괄 처리 가능
-- **알고리즘:**
-  - 신호 전처리: HPF/LPF, 좌표 변환
-  - 피처 추출: stairScore, varYZRatio, dirR1, stepVarH
-  - 커트라인 60점 이상 → "계단" 판정
-
-#### 3. **KoreaUniv/** (Android 네비게이션)
+#### 1. **KoreaUniv/** (Android 네비게이션)
 - **목적:** 고려대 캠퍼스 실내 네비게이션
 - **기술 스택:** Kotlin, Android Gradle, Dagger-Hilt, Room DB
 - **주요 모듈:**
@@ -139,17 +106,17 @@ KU-LAB/
   - `PDR_EXT`: PDR 추적 모듈 (JNI로 C++ 알고리즘 호출)
   - `unityLibrary`: Unity AR 통합
 
-#### 4. **Daewoo_109/** (Unity 3D 시뮬레이션)
+#### 2. **Daewoo_109/** (Unity 3D 시뮬레이션)
 - **목적:** 대우아파트 3D 가시화 및 시뮬레이션
 - **기술:** Unity 2023 LTS, C# Burst 컴파일러
 - **기능:** 건물 모델링, 경로 시뮬레이션, AR 통합
 
-#### 5. **zeromap-daewoo-apartment-android/** (아파트 네비게이션)
+#### 3. **zeromap-daewoo-apartment-android/** (아파트 네비게이션)
 - **목적:** 대우아파트 전용 네비게이션 앱
 - **특징:** IL2CPP 네이티브 코드 지원 (고성능)
 - **구조:** Spring Boot 서버와 연동
 
-#### 6. **Server_DB/** (백엔드 서버)
+#### 4. **Server_DB/** (백엔드 서버)
 
 **Express.js 서버** (`Server_express/`)
 - **역할:** 경량 API 서버 (실시간 업데이트)
@@ -173,7 +140,7 @@ KU-LAB/
   - Swagger/OpenAPI (API 문서)
 - **기능:** 사용자 관리, 지도 데이터 CRUD, 권한 관리
 
-#### 7. **TestApplication/** (통합 테스트)
+#### 5. **TestApplication/** (통합 테스트)
 - **목적:** Android 시스템 통합 테스트
 - **기능:** 센서 데이터 수집, PDR 검증, 맵 렌더링 테스트
 
@@ -207,10 +174,7 @@ KU-LAB/
 - **JWT 인증:** 보안 API 엔드포인트
 
 ### 5. 시뮬레이션 & 검증
-- **PDR 시뮬레이터:** 새로운 알고리즘 빠른 검증
-- **Floor Detection 시뮬레이터:** 다양한 보행 데이터로 성능 평가
-- **OpenCV 시각화:** 신호 파형, 경로, 점수 실시간 표시
-- **배치 분석:** 전체 데이터셋에 대한 일괄 처리 및 통계
+- [Indoor-Navigation-Sim](https://github.com/luke0911/Indoor-Navigation-Sim) 저장소에서 PDR/Floor Detection 시뮬레이터 제공
 
 ### 6. 크로스 플랫폼 지원
 - **Android:** Kotlin + C++ NDK (고성능 알고리즘)
@@ -221,24 +185,6 @@ KU-LAB/
 ---
 
 ## 빌드 및 실행
-
-### PDR Simulation 빌드
-```bash
-cd PDR_simulation
-mkdir -p build && cd build
-cmake ..
-make -j$(nproc)
-./pdr_sim
-```
-
-### IMU Floor Detection 빌드
-```bash
-cd IMU_Floor_deteciton_simulation
-mkdir -p build && cd build
-cmake ..
-make -j$(nproc)
-./floor_sim ../data/Floor_sim_data/Floor_sim_data_sample.txt
-```
 
 ### Android 앱 빌드 (KoreaUniv)
 ```bash
@@ -297,8 +243,7 @@ cd Server_DB/Server_spring/digitaltwin-backend-springboot-main
 
 ## 참고 자료
 
-- **PDR 알고리즘 개선 보고서:** `/PDR_simulation/PDR_알고리즘_개선_보고서.md`
-- **시뮬레이터 사용 설명서:** 각 프로젝트의 `README.md`
+- **시뮬레이터:** [Indoor-Navigation-Sim](https://github.com/luke0911/Indoor-Navigation-Sim) 저장소 참고
 - **API 문서:** `/Server_DB/Server_express` 및 `/Server_spring` Swagger 엔드포인트
 - **백엔드 배포 가이드:** `/Server_DB/백엔드 배포 가이드.pdf`
 
@@ -310,6 +255,7 @@ cd Server_DB/Server_spring/digitaltwin-backend-springboot-main
 각 서브프로젝트별 라이선스는 해당 디렉토리의 LICENSE 파일을 참고하세요.
 
 ### 관련 Repository
+- Indoor-Navigation-Sim (시뮬레이션): https://github.com/luke0911/Indoor-Navigation-Sim
 - Express.js 서버: https://github.com/KU-IPLab/digitaltwin-backend-expressjs
 - Spring Boot 서버: https://github.com/KU-IPLab/digitaltwin-backend-springboot
 - ZeroMap Android: https://github.com/anthropics/zeromap-korea_university_campus-android
